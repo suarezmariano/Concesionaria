@@ -6,8 +6,16 @@ const concesionaria = {
     buscarAuto : function ( patente)  {
         const coche = autos.find ( (a) => a.patente == patente );
          return coche ? coche : null;
-      }
+    },
 
+    venderAuto : function (patente) {   
+        const coche = this.buscarAuto(patente);
+        if (coche ){
+           coche.vendido = true;
+          const index = autos.findIndex ((a) => a.patente == patente);
+          autos[index] = coche;
+        };
+    }
 
 
 
