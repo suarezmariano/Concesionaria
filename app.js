@@ -15,7 +15,21 @@ const concesionaria = {
           const index = autos.findIndex ((a) => a.patente == patente);
           autos[index] = coche;
         };
-    }
+    };
+
+    autosParaLaVenta : function (){
+        const lista = autos.filter(function(auto){
+        return auto.vendido == false;
+       }) ;  
+        return lista;
+       },
+  
+     autos0KM : function (){
+        const lista = this.autosParaLaVenta();
+        const disponible = lista.filter(function(a){ 
+        return a.kms < 100; });
+            return disponible;
+        }
 
 
 
