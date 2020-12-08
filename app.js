@@ -3,6 +3,10 @@ const  autos = require ('./autos.js');
 const concesionaria = {
     autos: autos,
 
+    buscarAuto : function ( patente)  {
+        const coche = autos.find ( (a) => a.patente == patente );
+         return coche ? coche : null;
+      }
 
 
 
